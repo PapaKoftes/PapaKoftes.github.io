@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mina Mikail — Manufacturing Software Engineer</title>
+<style>
+  :root{
+    --bg:#0e0e13; --panel:#16141d; --panel2:#1c1926; --line:#2c2738;
+    --ink:#ece9f4; --mut:#a39cb6; --p:#9a6cff; --pdeep:#4a2c6d; --green:#6ee7a0;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif; color:var(--ink); line-height:1.55; background:var(--bg); }
+  a{ color:var(--p); text-decoration:none; } a:hover{ text-decoration:underline; }
+  .wrap{ max-width:1000px; margin:0 auto; padding:0 22px; }
+  /* language switch */
+  .lang-en .de{ display:none !important; }
+  .lang-de .en{ display:none !important; }
+  .langtoggle{ position:absolute; top:16px; right:22px; }
+  #langBtn{ background:rgba(154,108,255,.18); color:#fff; border:1px solid rgba(154,108,255,.5);
+    border-radius:7px; padding:6px 12px; font-size:10pt; font-weight:700; cursor:pointer; letter-spacing:.5px; }
+  #langBtn:hover{ background:rgba(154,108,255,.34); }
+  header{ position:relative; background:linear-gradient(135deg,#0c0a14 0%,#2a1942 55%,#4a2c6d 100%); color:#fff; padding:42px 0 36px; border-bottom:1px solid var(--line); }
+  .hero{ display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+  .hero img{ width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid var(--p); box-shadow:0 0 0 4px rgba(154,108,255,.18); }
+  .hero h1{ font-size:30pt; line-height:1.05; font-weight:800; letter-spacing:.3px; }
+  .hero .role{ font-size:13.5pt; font-weight:600; margin-top:6px; color:#d9ccf5; }
+  .hero .one{ font-size:11pt; font-style:italic; margin-top:10px; max-width:640px; color:#e7ddfa; }
+  .links{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+  .links a{ background:rgba(154,108,255,.16); color:#fff; padding:7px 13px; border-radius:7px; font-size:10pt; border:1px solid rgba(154,108,255,.4); }
+  .links a:hover{ background:rgba(154,108,255,.3); text-decoration:none; }
+  section{ padding:30px 0; border-bottom:1px solid var(--line); }
+  h2{ color:var(--p); font-size:16pt; letter-spacing:.4px; margin-bottom:6px; }
+  h2 .sub{ font-size:10pt; font-weight:400; color:var(--mut); }
+  .lead{ color:var(--mut); max-width:780px; margin-bottom:14px; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media(max-width:760px){ .grid{ grid-template-columns:1fr; } .hero h1{ font-size:24pt; } }
+  .card{ border:1px solid var(--line); border-radius:11px; padding:16px 18px; background:var(--panel); }
+  .card h3{ font-size:12.5pt; color:var(--ink); }
+  .card .tag{ display:inline-block; font-size:8.5pt; font-weight:700; text-transform:uppercase; letter-spacing:.5px; padding:2px 8px; border-radius:20px; margin-left:6px; vertical-align:middle; }
+  .pub{ background:rgba(46,160,90,.18); color:var(--green); } .priv{ background:rgba(154,108,255,.2); color:#c4a6ff; }
+  .card p{ font-size:10.5pt; margin-top:7px; color:#d8d3e4; }
+  .card .stack{ font-size:9pt; color:var(--mut); margin-top:9px; font-family:"Consolas",monospace; }
+  .card .cta{ font-size:9.5pt; margin-top:9px; }
+  .diagram{ background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:14px; margin-top:14px; overflow-x:auto; }
+  .diagram .t{ font-size:10pt; font-weight:700; color:var(--p); margin-bottom:8px; }
+  .note{ font-size:9pt; color:var(--mut); margin-top:6px; }
+  .ph{ border:2px dashed #5b4a86; border-radius:10px; padding:18px; text-align:center; color:#b3a7d6; font-size:9.5pt; background:#14101e; margin-top:12px; }
+  .skills span.s{ display:inline-block; background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:5px 10px; margin:3px; font-size:9.5pt; color:#d8d3e4; }
+  footer{ padding:26px 0 40px; color:var(--mut); font-size:9.5pt; text-align:center; }
+  svg{ max-width:100%; height:auto; font-family:"Segoe UI",Arial,sans-serif; }
+  .b{ fill:#1c1926; stroke:var(--p); stroke-width:1.5; }
+  .bf{ fill:#2a1f3d; stroke:var(--p); stroke-width:1.5; }
+  .bt{ fill:#ece9f4; font-size:11px; } .bs{ fill:#a39cb6; font-size:9.5px; }
+  .ar{ stroke:#8a7caf; stroke-width:1.6; fill:none; }
+  .lbl{ fill:#a39cb6; font-size:9px; }
+</style>
+</head>
+<body class="lang-en">
+<header>
+  <div class="langtoggle"><button id="langBtn" type="button">DE</button></div>
+  <div class="wrap hero">
+    <img src="profile.png" alt="Mina Mikail">
+    <div>
+      <h1>Mina Mikail</h1>
+      <div class="role"><span class="en">Mechatronics Engineer · CNC Automation &amp; Manufacturing Software</span><span class="de">Mechatronik-Ingenieur · CNC-Automatisierung &amp; Fertigungssoftware</span></div>
+      <div class="one"><span class="en">I build the software that runs CNC manufacturing machines — and operate, integrate and maintain the machines myself.</span><span class="de">Ich entwickle die Software, die CNC-Fertigungsmaschinen steuert — und bediene, integriere und warte die Maschinen selbst.</span></div>
+      <div class="links">
+        <a href="https://github.com/PapaKoftes">GitHub</a>
+        <a href="https://www.linkedin.com/in/minamikailpk">LinkedIn</a>
+        <a href="mailto:minamikailpk@gmail.com">minamikailpk@gmail.com</a>
+        <a href="CV_Mina_Mikail_EN.pdf">CV (EN)</a>
+        <a href="CV_Mina_Mikail_DE.pdf">Lebenslauf (DE)</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section><div class="wrap">
+  <h2><span class="en">What I do</span><span class="de">Was ich mache</span></h2>
+  <p class="lead en">Mechatronics engineer who turns hands-on CNC manufacturing into production software. As the sole engineer for production systems at a four-person manufacturing startup, I operated, maintained and repaired the 3-/5-axis Biesse routers and built the validation, machine-integration (OPC-UA) and automation tooling around them. This page is the engineering evidence — production systems, open-source tools and a few commercial products.</p>
+  <p class="lead de">Mechatronik-Ingenieur, der praktische CNC-Fertigung in produktionsreife Software überführt. Als allein verantwortlicher Ingenieur für die Produktionssysteme eines Vier-Personen-Fertigungs-Startups habe ich die 3-/5-Achs-Biesse-Maschinen bedient, gewartet und repariert und die Validierungs-, Maschinenanbindungs- (OPC-UA) und Automatisierungswerkzeuge darum herum gebaut. Diese Seite ist der technische Nachweis — Produktionssysteme, Open-Source-Tools und einige kommerzielle Produkte.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2><span class="en">Production CNC systems I built <span class="sub">— architecture overview</span></span><span class="de">Produktions-CNC-Systeme, die ich gebaut habe <span class="sub">— Architekturüberblick</span></span></h2>
+
+  <div class="diagram">
+    <div class="t"><span class="en">1 · DXF → ISO validation &amp; optimization pipeline (production, across 5 routers)</span><span class="de">1 · DXF → ISO Validierungs- &amp; Optimierungspipeline (produktiv, über 5 Maschinen)</span></div>
+    <svg viewBox="0 0 920 120" role="img" aria-label="Validation pipeline">
+      <defs><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8a7caf"/></marker></defs>
+      <rect class="b" x="8" y="40" width="120" height="44" rx="6"/><text class="bt" x="68" y="60" text-anchor="middle">DXF</text>
+      <text class="bs en" x="68" y="74" text-anchor="middle">from CAD/CAM</text><text class="bs de" x="68" y="74" text-anchor="middle">aus CAD/CAM</text>
+      <line class="ar" x1="128" y1="62" x2="178" y2="62" marker-end="url(#a)"/>
+      <rect class="bf" x="180" y="22" width="250" height="80" rx="6"/>
+      <text class="bt en" x="305" y="44" text-anchor="middle">Validate</text><text class="bt de" x="305" y="44" text-anchor="middle">Prüfen</text>
+      <text class="bs en" x="305" y="62" text-anchor="middle">geometry · collisions · sheet/material</text><text class="bs de" x="305" y="62" text-anchor="middle">Geometrie · Kollisionen · Platte/Material</text>
+      <text class="bs en" x="305" y="77" text-anchor="middle">cut-depth · missing toolpaths · tagging</text><text class="bs de" x="305" y="77" text-anchor="middle">Frästiefe · fehlende Wege · Tagging</text>
+      <line class="ar" x1="430" y1="62" x2="480" y2="62" marker-end="url(#a)"/>
+      <rect class="b" x="482" y="40" width="150" height="44" rx="6"/>
+      <text class="bt en" x="557" y="60" text-anchor="middle">Optimize</text><text class="bt de" x="557" y="60" text-anchor="middle">Optimieren</text>
+      <text class="bs en" x="557" y="74" text-anchor="middle">toolpaths / nesting</text><text class="bs de" x="557" y="74" text-anchor="middle">Werkzeugwege / Nesting</text>
+      <line class="ar" x1="632" y1="62" x2="682" y2="62" marker-end="url(#a)"/>
+      <rect class="b" x="684" y="40" width="100" height="44" rx="6"/><text class="bt" x="734" y="60" text-anchor="middle">ISO</text>
+      <text class="bs en" x="734" y="74" text-anchor="middle">program</text><text class="bs de" x="734" y="74" text-anchor="middle">Programm</text>
+      <line class="ar" x1="784" y1="62" x2="834" y2="62" marker-end="url(#a)"/>
+      <rect class="bf" x="836" y="40" width="78" height="44" rx="6"/><text class="bt" x="875" y="60" text-anchor="middle">Router</text><text class="bs" x="875" y="74" text-anchor="middle">Biesse</text>
+    </svg>
+    <div class="note en">~300 modules · 33 test suites · CI · introduced after faulty files caused crashes and scrap.</div>
+    <div class="note de">~300 Module · 33 Test-Suites · CI · eingeführt, nachdem fehlerhafte Dateien Crashs und Ausschuss verursacht hatten.</div>
+  </div>
+
+  <div class="diagram">
+    <div class="t"><span class="en">2 · Machine telemetry — reverse-engineered OPC-UA (prototype → production Windows service)</span><span class="de">2 · Maschinentelemetrie — reverse-engineertes OPC-UA (Prototyp → produktiver Windows-Dienst)</span></div>
+    <svg viewBox="0 0 920 120" role="img" aria-label="OPC-UA telemetry">
+      <defs><marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8a7caf"/></marker></defs>
+      <rect class="bf" x="8" y="40" width="150" height="44" rx="6"/>
+      <text class="bt en" x="83" y="60" text-anchor="middle">Biesse controller</text><text class="bt de" x="83" y="60" text-anchor="middle">Biesse-Steuerung</text>
+      <text class="bs en" x="83" y="74" text-anchor="middle">no documented export</text><text class="bs de" x="83" y="74" text-anchor="middle">kein dokum. Export</text>
+      <line x1="158" y1="62" x2="208" y2="62" class="ar" marker-end="url(#a2)"/><text class="lbl" x="183" y="54" text-anchor="middle">OPC-UA</text>
+      <rect class="b" x="210" y="34" width="190" height="56" rx="6"/><text class="bt" x="305" y="56" text-anchor="middle">OPC-UA client</text>
+      <text class="bs en" x="305" y="72" text-anchor="middle">Windows service · cert auth</text><text class="bs de" x="305" y="72" text-anchor="middle">Windows-Dienst · Zertifikat</text>
+      <line x1="400" y1="62" x2="450" y2="62" class="ar" marker-end="url(#a2)"/>
+      <rect class="b" x="452" y="40" width="190" height="44" rx="6"/>
+      <text class="bt en" x="547" y="60" text-anchor="middle">CSV · real-time DB · Airtable</text><text class="bt de" x="547" y="60" text-anchor="middle">CSV · Echtzeit-DB · Airtable</text>
+      <line x1="642" y1="62" x2="692" y2="62" class="ar" marker-end="url(#a2)"/>
+      <rect class="bf" x="694" y="40" width="220" height="44" rx="6"/>
+      <text class="bt en" x="804" y="58" text-anchor="middle">Monitoring dashboard + ML</text><text class="bt de" x="804" y="58" text-anchor="middle">Monitoring-Dashboard + ML</text>
+      <text class="bs en" x="804" y="73" text-anchor="middle">live status · current job</text><text class="bs de" x="804" y="73" text-anchor="middle">Live-Status · aktueller Job</text>
+    </svg>
+    <div class="note en">Also: documented 328+ machine-data files (~5,000-line reference) and a real-time tool-change monitor.</div>
+    <div class="note de">Außerdem: 328+ Maschinendaten-Dateien dokumentiert (~5.000-zeiliges Referenzhandbuch) und einen Echtzeit-Werkzeugwechsel-Monitor gebaut.</div>
+  </div>
+
+</div></section>
+
+<section><div class="wrap">
+  <h2><span class="en">Selected projects</span><span class="de">Ausgewählte Projekte</span></h2>
+  <p class="lead en">One pattern runs through all of these: take a manufacturing or geometry problem and carry it the whole way to tested, CI-backed, production-grade software. My CNC/manufacturing work leads; the rest shows range. Public work is linked and verifiable; commercial products (BiessePost, Interlock) are described in technical detail but not open-sourced.</p>
+  <p class="lead de">Ein Muster zieht sich durch alle: ein Fertigungs- oder Geometrieproblem nehmen und es bis zu getesteter, CI-gestützter, produktionsreifer Software durchziehen. Meine CNC-/Fertigungsarbeit steht im Vordergrund; der Rest zeigt die Bandbreite. Öffentliche Arbeiten sind verlinkt und überprüfbar; kommerzielle Produkte (BiessePost, Interlock) werden technisch beschrieben, aber nicht quelloffen veröffentlicht.</p>
+  <div class="grid">
+
+    <div class="card">
+      <h3>OMIM <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Deterministic manufacturing-geometry analysis: parses a DXF into a provenance-tracked Manufacturing Geometry Graph, validates it against standards-derived rules, and classifies features (optional advisory ML).</p>
+      <p class="de">Deterministische Fertigungsgeometrie-Analyse: wandelt eine DXF in einen herkunftsverfolgten Manufacturing Geometry Graph, prüft ihn gegen normbasierte Regeln und klassifiziert Features (optionales beratendes ML).</p>
+      <div class="stack">Python · ezdxf · Shapely · NetworkX · Pydantic · FastAPI · React · Docker · CI</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/OMIM">github.com/PapaKoftes/OMIM →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>cnc-dxf-toolkit <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">A DXF-prep library + CLI for CNC routing: cut start-point/lead-in control (keeps witness marks off the visible face), contour ordering, per-layer cut-depth, layer-name normalization, sheet-utilization reporting, and a configurable pre-flight validator — depth limits, stock-bounds, short segments, missing layers and machinability rules (e.g. 3- vs 5-axis). Layer names and machine rules are parameters, so it fits any shop.</p>
+      <p class="de">Eine DXF-Aufbereitungs-Bibliothek + CLI für die CNC-Bearbeitung: Schnitt-Startpunkt-/Lead-in-Steuerung (hält Einstichspuren von der Sichtfläche fern), Kontur-Sortierung, Schnitttiefe pro Ebene, Ebenennamen-Normalisierung, Plattenausnutzungs-Auswertung und ein konfigurierbarer Pre-Flight-Validator — Tiefengrenzen, Plattengrenzen, zu kurze Segmente, fehlende Ebenen und Bearbeitbarkeitsregeln (z. B. 3- vs. 5-Achsen). Ebenennamen und Maschinenregeln sind Parameter und passen so in jeden Betrieb.</p>
+      <div class="stack">Python · ezdxf · pytest (35) · CLI</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/cnc-dxf-toolkit">github.com/PapaKoftes/cnc-dxf-toolkit →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>cnc-cycle-time <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">A machine-learning cycle-time predictor that trains on your own data: point it at a folder of DXFs plus a telemetry/RTDB CSV of how long each job actually ran, and it learns to estimate the cut time of new parts. Generic geometry features (cut length, pierces, estimated rapid travel, entity/layer counts), flexible CSV ingestion (a duration column or start/end timestamps), and cross-validated model selection (Random Forest / gradient boosting) against a physics baseline. CLI: train / predict / evaluate.</p>
+      <p class="de">Ein ML-Modell zur Zykluszeit-Vorhersage, das auf den eigenen Daten trainiert: man richtet es auf einen Ordner mit DXFs plus eine Telemetrie-/RTDB-CSV mit den tatsächlichen Laufzeiten, und es lernt, die Schnittzeit neuer Teile zu schätzen. Generische Geometrie-Merkmale (Schnittlänge, Einstiche, geschätzte Eilgang-Wege, Entitäts-/Ebenenzahlen), flexible CSV-Einlesung (Dauer-Spalte oder Start/Ende-Zeitstempel) und kreuzvalidierte Modellauswahl (Random Forest / Gradient Boosting) gegen eine Physik-Baseline. CLI: train / predict / evaluate.</p>
+      <div class="stack">Python · scikit-learn · ezdxf · pytest · CLI</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/cnc-cycle-time">github.com/PapaKoftes/cnc-cycle-time →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>BiessePost <span class="tag priv">Private</span></h3>
+      <p class="en">A full postprocessor for Biesse Rover routers: DXF → ISO 6983 / BPP / CIX with correct 5-axis kinematics and non-overridable safety limits. Built to replace per-machine vendor CAM licenses (€6k / 3-axis, €10k / 5-axis).</p>
+      <p class="de">Ein vollständiger Postprozessor für Biesse-Rover-Maschinen: DXF → ISO 6983 / BPP / CIX mit korrekter 5-Achs-Kinematik und nicht überschreibbaren Sicherheitsgrenzen. Entwickelt, um die Hersteller-CAM-Lizenzen pro Maschine abzulösen (€6k / 3-Achs, €10k / 5-Achs).</p>
+      <div class="stack">Python · ezdxf · Shapely · FastAPI · 4,000+ <span class="en">automated tests</span><span class="de">automatisierte Tests</span> · CI</div>
+      <div class="cta"><span class="en">Commercial product — offered as part of my engineering services (not open-sourced).</span><span class="de">Kommerzielles Produkt — Teil meiner Engineering-Dienstleistungen (nicht quelloffen).</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Layla <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Local-first AI assistant/agent that runs entirely on your own hardware (local GGUF model, no cloud), with an approval-gated tool surface and durable local memory.</p>
+      <p class="de">Local-first KI-Assistent/Agent, der vollständig auf eigener Hardware läuft (lokales GGUF-Modell, keine Cloud), mit freigabegesteuerten Tools und dauerhaftem lokalem Gedächtnis.</p>
+      <div class="stack">Python · FastAPI · SQLite · ChromaDB · llama.cpp · 200+ pytest · GitHub Actions</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/Layla">github.com/PapaKoftes/Layla →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Interlock <span class="tag priv">Private</span></h3>
+      <p class="en">Fabrication engine: turns panel designs into joints (finger, dado, dovetail, mortise-and-tenon), nesting layouts and cut files with structural reports.</p>
+      <p class="de">Fertigungs-Engine: wandelt Plattenentwürfe in Verbindungen (Finger-, Nut-, Schwalbenschwanz-, Zapfenverbindungen), Nesting-Layouts und Fräsdateien mit Strukturberichten.</p>
+      <div class="stack">Python · ezdxf · Shapely · FastAPI · <span class="en">extensive test suite</span><span class="de">umfangreiche Tests</span></div>
+      <div class="cta"><span class="en">Commercial product — offered as part of my engineering services (not open-sourced).</span><span class="de">Kommerzielles Produkt — Teil meiner Engineering-Dienstleistungen (nicht quelloffen).</span></div>
+    </div>
+
+    <div class="card">
+      <h3>AMS-JobAssist <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Offline, privacy-first CV builder with a separate trainer dashboard. Privacy is enforced at the socket layer (loopback-only) and backed by a full DPIA; local LLM extraction, 12-language UI, 662 tests, packaged as standalone Windows executables.</p>
+      <p class="de">Offline, datenschutzfreundlicher CV-Generator mit separatem Trainer-Dashboard. Datenschutz wird auf Socket-Ebene erzwungen (nur Loopback) und durch eine vollständige DSFA belegt; lokale LLM-Extraktion, Oberfläche in 12 Sprachen, 662 Tests, paketiert als eigenständige Windows-EXE-Dateien.</p>
+      <div class="stack">Python · FastAPI · SQLite · Ollama · python-docx · PyInstaller</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/AMS-JobAssist">github.com/PapaKoftes/AMS-JobAssist →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Vibesort <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Sorts a Spotify library into 110 mood playlists (plus genre playlists) via a multi-signal weighted scoring system — tags, sentence-transformer embeddings, a large genre hierarchy and an audio proxy — with graph propagation, re-architected after Spotify removed its audio-features API.</p>
+      <p class="de">Sortiert eine Spotify-Bibliothek in 110 Stimmungs-Playlists (plus Genre-Playlists) über ein mehrsignal-gewichtetes Bewertungssystem — Tags, Sentence-Transformer-Embeddings, eine umfangreiche Genre-Hierarchie und einen Audio-Proxy — mit Graph-Propagation, neu konzipiert, nachdem Spotify seine Audio-Features-API abgeschaltet hatte.</p>
+      <div class="stack">Python · Streamlit · sentence-transformers · Spotify PKCE · 78 <span class="en">tests</span><span class="de">Tests</span></div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/VibeSort">github.com/PapaKoftes/VibeSort →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>ManuScribe <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Offline LLM translator for light novels / web fiction: a multi-pass translate → refine → review pipeline (Ollama, Argos fallback) with custom EPUB parsing, in a PySide/Qt desktop app packaged as a Windows executable.</p>
+      <p class="de">Offline-LLM-Übersetzer für Light Novels / Web-Fiction: eine mehrstufige Pipeline übersetzen → verfeinern → prüfen (Ollama, Argos-Fallback) mit eigenem EPUB-Parsing, in einer PySide/Qt-Desktop-App, paketiert als Windows-EXE.</p>
+      <div class="stack">Python · PySide/Qt · Ollama · lxml · PyInstaller</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/ManuScribe">github.com/PapaKoftes/ManuScribe →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Zero One <span class="en">— Industrial AI hackathon (Infineon)</span><span class="de">— Industrial-AI-Hackathon (Infineon)</span></h3>
+      <p class="en">Top contributor — built the physics / neuro-symbolic verification harness at the core of the team's entry.</p>
+      <p class="de">Top-Beitragender — die physikbasierte / neuro-symbolische Verifikations-Harness gebaut, die den Kern des Team-Beitrags bildete.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sphinx <span class="en">— Start Hackathon (Techbold)</span><span class="de">— Start Hackathon (Techbold)</span></h3>
+      <p class="en">Team project — built the safety &amp; execution core of "Sphinx".</p>
+      <p class="de">Teamprojekt — den Sicherheits- &amp; Ausführungskern von „Sphinx“ gebaut.</p>
+    </div>
+
+    <div class="card">
+      <h3>Synthropy <span class="en">— University:Future Festival 2026</span><span class="de">— University:Future Festival 2026</span></h3>
+      <p class="en">Helped run "Synthropy", an immersive biotechnology projection installation (cellular data → live audiovisual environment), on the Future Tech:Stage at TU Braunschweig. My part: on-site deployment — containerized on a Raspberry Pi (Docker), plus API, network and projector setup.</p>
+      <p class="de">„Synthropy" mit betrieben — eine immersive Biotechnologie-Projektionsinstallation (Zelldaten → live audiovisuelle Umgebung) auf der Future Tech:Stage an der TU Braunschweig. Mein Beitrag: Vor-Ort-Deployment — containerisiert auf einem Raspberry Pi (Docker) sowie Einrichtung von API, Netzwerk und Projektoren.</p>
+      <div class="cta"><a href="https://festival.hfd.digital/en/techstage-brunswick-2026/">festival.hfd.digital →</a></div>
+    </div>
+
+  </div>
+
+  <div class="diagram">
+    <div class="t"><span class="en">BiessePost — DXF → machine program</span><span class="de">BiessePost — DXF → Maschinenprogramm</span></div>
+    <svg viewBox="0 0 920 120" role="img" aria-label="BiessePost flow">
+      <defs><marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8a7caf"/></marker></defs>
+      <rect class="b" x="8" y="40" width="90" height="44" rx="6"/><text class="bt" x="53" y="66" text-anchor="middle">DXF</text>
+      <line x1="98" y1="62" x2="148" y2="62" class="ar" marker-end="url(#a3)"/>
+      <rect class="b" x="150" y="40" width="120" height="44" rx="6"/>
+      <text class="bt en" x="210" y="60" text-anchor="middle">Parse</text><text class="bt de" x="210" y="60" text-anchor="middle">Parsen</text>
+      <text class="bs en" x="210" y="74" text-anchor="middle">geometry</text><text class="bs de" x="210" y="74" text-anchor="middle">Geometrie</text>
+      <line x1="270" y1="62" x2="320" y2="62" class="ar" marker-end="url(#a3)"/>
+      <rect class="bf" x="322" y="22" width="250" height="80" rx="6"/>
+      <text class="bt en" x="447" y="44" text-anchor="middle">5-axis kinematics</text><text class="bt de" x="447" y="44" text-anchor="middle">5-Achs-Kinematik</text>
+      <text class="bs en" x="447" y="62" text-anchor="middle">tool-vector → B/C machine angles · TCP</text><text class="bs de" x="447" y="62" text-anchor="middle">Werkzeugvektor → B/C-Maschinenwinkel · TCP</text>
+      <text class="bs en" x="447" y="78" text-anchor="middle">safety clamps: feed · depth · collision</text><text class="bs de" x="447" y="78" text-anchor="middle">Sicherheitsgrenzen: Vorschub · Tiefe · Kollision</text>
+      <line x1="572" y1="62" x2="622" y2="62" class="ar" marker-end="url(#a3)"/>
+      <rect class="b" x="624" y="40" width="170" height="44" rx="6"/><text class="bt" x="709" y="60" text-anchor="middle">ISO 6983 / BPP / CIX</text>
+      <text class="bs en" x="709" y="74" text-anchor="middle">machine program</text><text class="bs de" x="709" y="74" text-anchor="middle">Maschinenprogramm</text>
+      <line x1="794" y1="62" x2="844" y2="62" class="ar" marker-end="url(#a3)"/>
+      <rect class="bf" x="846" y="40" width="68" height="44" rx="6"/><text class="bt" x="880" y="66" text-anchor="middle">Rover</text>
+    </svg>
+    <div class="note en">Full 5-axis kinematics with non-overridable safety limits; 4,000+ automated tests.</div>
+    <div class="note de">Vollständige 5-Achs-Kinematik mit nicht überschreibbaren Sicherheitsgrenzen; 4.000+ automatisierte Tests.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2><span class="en">Skills</span><span class="de">Kompetenzen</span></h2>
+  <div class="skills en">
+    <span class="s">Python (advanced)</span><span class="s">FastAPI / REST</span><span class="s">ezdxf · Shapely · NetworkX</span><span class="s">scikit-learn</span>
+    <span class="s">pytest · CI (GitHub Actions)</span><span class="s">Docker</span><span class="s">SQL · SQLite · PostgreSQL</span>
+    <span class="s">OPC-UA</span><span class="s">DXF → ISO / G-code · postprocessing</span><span class="s">NChops macros</span><span class="s">DLL/API wrapping</span>
+    <span class="s">3-/5-axis Biesse Rover operation &amp; maintenance</span><span class="s">Rhino3D · Grasshopper</span><span class="s">Revit / BIM</span>
+    <span class="s">Inventor · SolidWorks (basic)</span><span class="s">Local LLMs · RAG</span><span class="s">Raspberry Pi · Caddy · systemd</span><span class="s">Arduino · ESP32</span>
+  </div>
+  <div class="skills de">
+    <span class="s">Python (fortgeschritten)</span><span class="s">FastAPI / REST</span><span class="s">ezdxf · Shapely · NetworkX</span><span class="s">scikit-learn</span>
+    <span class="s">pytest · CI (GitHub Actions)</span><span class="s">Docker</span><span class="s">SQL · SQLite · PostgreSQL</span>
+    <span class="s">OPC-UA</span><span class="s">DXF → ISO / G-Code · Postprocessing</span><span class="s">NChops-Makros</span><span class="s">DLL/API-Wrapping</span>
+    <span class="s">3-/5-Achs-Biesse-Rover Bedienung &amp; Wartung</span><span class="s">Rhino3D · Grasshopper</span><span class="s">Revit / BIM</span>
+    <span class="s">Inventor · SolidWorks (Grundlagen)</span><span class="s">Lokale LLMs · RAG</span><span class="s">Raspberry Pi · Caddy · systemd</span><span class="s">Arduino · ESP32</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Mina Mikail · <span class="en">Mechatronics Engineer · CNC Automation &amp; Manufacturing Software · Swiss national · Vienna, AT</span><span class="de">Mechatronik-Ingenieur · CNC-Automatisierung &amp; Fertigungssoftware · Schweizer Staatsbürger · Wien, AT</span> ·
+  <a href="mailto:minamikailpk@gmail.com">minamikailpk@gmail.com</a> · <a href="https://github.com/PapaKoftes">github.com/PapaKoftes</a>
+</div></footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-' + l;
+    document.documentElement.lang = l;
+    var b = document.getElementById('langBtn');
+    if(b) b.textContent = (l === 'en' ? 'DE' : 'EN');
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  (function(){
+    var l = 'en';
+    try{ l = localStorage.getItem('lang') || 'en'; }catch(e){}
+    setLang(l);
+  })();
+  document.getElementById('langBtn').addEventListener('click', function(){
+    setLang(document.body.classList.contains('lang-de') ? 'en' : 'de');
+  });
+</script>
+</body>
+</html>
