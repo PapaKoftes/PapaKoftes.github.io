@@ -43,6 +43,7 @@
   h2 .sub{ font-size:10pt; font-weight:400; color:var(--mut); }
   .lead{ color:var(--mut); max-width:780px; margin-bottom:14px; }
   .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .grp{ color:var(--p); font-size:11.5pt; font-weight:700; letter-spacing:.3px; margin:26px 0 8px; }
   @media(max-width:760px){ .grid{ grid-template-columns:1fr; } .hero h1{ font-size:24pt; } }
   .card{ border:1px solid var(--line); border-radius:11px; padding:16px 18px; background:var(--panel); }
   .card h3{ font-size:12.5pt; color:var(--ink); }
@@ -147,6 +148,7 @@
   <h2><span class="en">Selected projects</span><span class="de">Ausgewählte Projekte</span></h2>
   <p class="lead en">One pattern runs through all of these: take a manufacturing or geometry problem and carry it the whole way to tested, CI-backed, production-grade software. My CNC/manufacturing work leads; the rest shows range. Public work is linked and verifiable; commercial products (BiessePost, Interlock) are described in technical detail but not open-sourced.</p>
   <p class="lead de">Ein Muster zieht sich durch alle: ein Fertigungs- oder Geometrieproblem nehmen und es bis zu getesteter, CI-gestützter, produktionsreifer Software durchziehen. Meine CNC-/Fertigungsarbeit steht im Vordergrund; der Rest zeigt die Bandbreite. Öffentliche Arbeiten sind verlinkt und überprüfbar; kommerzielle Produkte (BiessePost, Interlock) werden technisch beschrieben, aber nicht quelloffen veröffentlicht.</p>
+  <div class="grp"><span class="en">Manufacturing &amp; CNC</span><span class="de">Fertigung &amp; CNC</span></div>
   <div class="grid">
 
     <div class="card">
@@ -182,62 +184,11 @@
     </div>
 
     <div class="card">
-      <h3>Layla <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
-      <p class="en">Local-first AI assistant/agent that runs entirely on your own hardware (local GGUF model, no cloud), with an approval-gated tool surface and durable local memory.</p>
-      <p class="de">Local-first KI-Assistent/Agent, der vollständig auf eigener Hardware läuft (lokales GGUF-Modell, keine Cloud), mit freigabegesteuerten Tools und dauerhaftem lokalem Gedächtnis.</p>
-      <div class="stack">Python · FastAPI · SQLite · ChromaDB · llama.cpp · pytest · GitHub Actions</div>
-      <div class="cta"><a href="https://github.com/PapaKoftes/Layla">github.com/PapaKoftes/Layla →</a></div>
-    </div>
-
-    <div class="card">
       <h3>Interlock <span class="tag priv">Private</span></h3>
       <p class="en">Fabrication engine: turns panel designs into joints (finger, dado, dovetail, mortise-and-tenon), nesting layouts and cut files with structural reports.</p>
       <p class="de">Fertigungs-Engine: wandelt Plattenentwürfe in Verbindungen (Finger-, Nut-, Schwalbenschwanz-, Zapfenverbindungen), Nesting-Layouts und Fräsdateien mit Strukturberichten.</p>
       <div class="stack">Python · ezdxf · Shapely · FastAPI · <span class="en">extensive test suite</span><span class="de">umfangreiche Tests</span></div>
       <div class="cta"><span class="en">Commercial product — offered as part of my engineering services (not open-sourced).</span><span class="de">Kommerzielles Produkt — Teil meiner Engineering-Dienstleistungen (nicht quelloffen).</span></div>
-    </div>
-
-    <div class="card">
-      <h3>AMS-JobAssist <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
-      <p class="en">Offline, privacy-first CV builder with a separate trainer dashboard. Privacy is enforced at the socket layer (loopback-only) and backed by a full DPIA; local LLM extraction, 12-language UI, packaged as standalone Windows executables.</p>
-      <p class="de">Offline, datenschutzfreundlicher CV-Generator mit separatem Trainer-Dashboard. Datenschutz wird auf Socket-Ebene erzwungen (nur Loopback) und durch eine vollständige DSFA belegt; lokale LLM-Extraktion, Oberfläche in 12 Sprachen, paketiert als eigenständige Windows-EXE-Dateien.</p>
-      <div class="stack">Python · FastAPI · SQLite · Ollama · python-docx · PyInstaller</div>
-      <div class="cta"><a href="https://github.com/PapaKoftes/AMS-JobAssist">github.com/PapaKoftes/AMS-JobAssist →</a></div>
-    </div>
-
-    <div class="card">
-      <h3>Vibesort <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
-      <p class="en">Sorts a Spotify library into 110 mood playlists (plus genre playlists) via a multi-signal weighted scoring system — tags, sentence-transformer embeddings, a large genre hierarchy and an audio proxy — with graph propagation, re-architected after Spotify removed its audio-features API.</p>
-      <p class="de">Sortiert eine Spotify-Bibliothek in 110 Stimmungs-Playlists (plus Genre-Playlists) über ein mehrsignal-gewichtetes Bewertungssystem — Tags, Sentence-Transformer-Embeddings, eine umfangreiche Genre-Hierarchie und einen Audio-Proxy — mit Graph-Propagation, neu konzipiert, nachdem Spotify seine Audio-Features-API abgeschaltet hatte.</p>
-      <div class="stack">Python · Streamlit · sentence-transformers · Spotify PKCE · <span class="en">tested</span><span class="de">getestet</span></div>
-      <div class="cta"><a href="https://github.com/PapaKoftes/VibeSort">github.com/PapaKoftes/VibeSort →</a></div>
-    </div>
-
-    <div class="card">
-      <h3>ManuScribe <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
-      <p class="en">Offline LLM translator for light novels / web fiction: a multi-pass translate → refine → review pipeline (Ollama, Argos fallback) with custom EPUB parsing, in a PySide/Qt desktop app packaged as a Windows executable.</p>
-      <p class="de">Offline-LLM-Übersetzer für Light Novels / Web-Fiction: eine mehrstufige Pipeline übersetzen → verfeinern → prüfen (Ollama, Argos-Fallback) mit eigenem EPUB-Parsing, in einer PySide/Qt-Desktop-App, paketiert als Windows-EXE.</p>
-      <div class="stack">Python · PySide/Qt · Ollama · lxml · PyInstaller</div>
-      <div class="cta"><a href="https://github.com/PapaKoftes/ManuScribe">github.com/PapaKoftes/ManuScribe →</a></div>
-    </div>
-
-    <div class="card">
-      <h3>Zero One <span class="en">— Industrial AI hackathon (Infineon)</span><span class="de">— Industrial-AI-Hackathon (Infineon)</span></h3>
-      <p class="en">Top contributor — built the physics / neuro-symbolic verification harness at the core of the team's entry.</p>
-      <p class="de">Top-Beitragender — die physikbasierte / neuro-symbolische Verifikations-Harness gebaut, die den Kern des Team-Beitrags bildete.</p>
-    </div>
-
-    <div class="card">
-      <h3>Sphinx <span class="en">— Start Hackathon (Techbold)</span><span class="de">— Start Hackathon (Techbold)</span></h3>
-      <p class="en">Team project — built the safety &amp; execution core of "Sphinx".</p>
-      <p class="de">Teamprojekt — den Sicherheits- &amp; Ausführungskern von „Sphinx“ gebaut.</p>
-    </div>
-
-    <div class="card">
-      <h3>Synthropy <span class="en">— University:Future Festival 2026</span><span class="de">— University:Future Festival 2026</span></h3>
-      <p class="en">Helped run "Synthropy", an immersive biotechnology projection installation (cellular data → live audiovisual environment), on the Future Tech:Stage at TU Braunschweig. My part: on-site deployment — containerized on a Raspberry Pi (Docker), plus API, network and projector setup.</p>
-      <p class="de">„Synthropy" mit betrieben — eine immersive Biotechnologie-Projektionsinstallation (Zelldaten → live audiovisuelle Umgebung) auf der Future Tech:Stage an der TU Braunschweig. Mein Beitrag: Vor-Ort-Deployment — containerisiert auf einem Raspberry Pi (Docker) sowie Einrichtung von API, Netzwerk und Projektoren.</p>
-      <div class="cta"><a href="https://festival.hfd.digital/en/techstage-brunswick-2026/">festival.hfd.digital →</a></div>
     </div>
 
   </div>
@@ -264,6 +215,67 @@
     </svg>
     <div class="note en">Full 5-axis kinematics with non-overridable safety limits; comprehensive automated test suite.</div>
     <div class="note de">Vollständige 5-Achs-Kinematik mit nicht überschreibbaren Sicherheitsgrenzen; umfassende automatisierte Testsuite.</div>
+  </div>
+
+  <div class="grp"><span class="en">Other software</span><span class="de">Weitere Software</span></div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Layla <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Local-first AI assistant/agent that runs entirely on your own hardware (local GGUF model, no cloud), with an approval-gated tool surface and durable local memory.</p>
+      <p class="de">Local-first KI-Assistent/Agent, der vollständig auf eigener Hardware läuft (lokales GGUF-Modell, keine Cloud), mit freigabegesteuerten Tools und dauerhaftem lokalem Gedächtnis.</p>
+      <div class="stack">Python · FastAPI · SQLite · ChromaDB · llama.cpp · pytest · GitHub Actions</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/Layla">github.com/PapaKoftes/Layla →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>AMS-JobAssist <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Offline, privacy-first CV builder with a separate trainer dashboard. Privacy is enforced at the socket layer (loopback-only) and backed by a full DPIA; local LLM extraction, 12-language UI, packaged as standalone Windows executables.</p>
+      <p class="de">Offline, datenschutzfreundlicher CV-Generator mit separatem Trainer-Dashboard. Datenschutz wird auf Socket-Ebene erzwungen (nur Loopback) und durch eine vollständige DSFA belegt; lokale LLM-Extraktion, Oberfläche in 12 Sprachen, paketiert als eigenständige Windows-EXE-Dateien.</p>
+      <div class="stack">Python · FastAPI · SQLite · Ollama · python-docx · PyInstaller</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/AMS-JobAssist">github.com/PapaKoftes/AMS-JobAssist →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Vibesort <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Sorts a Spotify library into 110 mood playlists (plus genre playlists) via a multi-signal weighted scoring system — tags, sentence-transformer embeddings, a large genre hierarchy and an audio proxy — with graph propagation, re-architected after Spotify removed its audio-features API.</p>
+      <p class="de">Sortiert eine Spotify-Bibliothek in 110 Stimmungs-Playlists (plus Genre-Playlists) über ein mehrsignal-gewichtetes Bewertungssystem — Tags, Sentence-Transformer-Embeddings, eine umfangreiche Genre-Hierarchie und einen Audio-Proxy — mit Graph-Propagation, neu konzipiert, nachdem Spotify seine Audio-Features-API abgeschaltet hatte.</p>
+      <div class="stack">Python · Streamlit · sentence-transformers · Spotify PKCE · <span class="en">tested</span><span class="de">getestet</span></div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/VibeSort">github.com/PapaKoftes/VibeSort →</a></div>
+    </div>
+
+    <div class="card">
+      <h3>ManuScribe <span class="tag pub"><span class="en">Public</span><span class="de">Öffentlich</span></span></h3>
+      <p class="en">Offline LLM translator for light novels / web fiction: a multi-pass translate → refine → review pipeline (Ollama, Argos fallback) with custom EPUB parsing, in a PySide/Qt desktop app packaged as a Windows executable.</p>
+      <p class="de">Offline-LLM-Übersetzer für Light Novels / Web-Fiction: eine mehrstufige Pipeline übersetzen → verfeinern → prüfen (Ollama, Argos-Fallback) mit eigenem EPUB-Parsing, in einer PySide/Qt-Desktop-App, paketiert als Windows-EXE.</p>
+      <div class="stack">Python · PySide/Qt · Ollama · lxml · PyInstaller</div>
+      <div class="cta"><a href="https://github.com/PapaKoftes/ManuScribe">github.com/PapaKoftes/ManuScribe →</a></div>
+    </div>
+
+  </div>
+
+  <div class="grp"><span class="en">Hackathons &amp; deployment</span><span class="de">Hackathons &amp; Deployment</span></div>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Zero One <span class="en">— Industrial AI hackathon (Infineon)</span><span class="de">— Industrial-AI-Hackathon (Infineon)</span></h3>
+      <p class="en">Top contributor — built the physics / neuro-symbolic verification harness at the core of the team's entry.</p>
+      <p class="de">Top-Beitragender — die physikbasierte / neuro-symbolische Verifikations-Harness gebaut, die den Kern des Team-Beitrags bildete.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sphinx <span class="en">— Start Hackathon (Techbold)</span><span class="de">— Start Hackathon (Techbold)</span></h3>
+      <p class="en">Team project — built the safety &amp; execution core of "Sphinx".</p>
+      <p class="de">Teamprojekt — den Sicherheits- &amp; Ausführungskern von „Sphinx“ gebaut.</p>
+    </div>
+
+    <div class="card">
+      <h3>Synthropy <span class="en">— University:Future Festival 2026</span><span class="de">— University:Future Festival 2026</span></h3>
+      <p class="en">Helped run "Synthropy", an immersive biotechnology projection installation (cellular data → live audiovisual environment), on the Future Tech:Stage at TU Braunschweig. My part: on-site deployment — containerized on a Raspberry Pi (Docker), plus API, network and projector setup.</p>
+      <p class="de">„Synthropy" mit betrieben — eine immersive Biotechnologie-Projektionsinstallation (Zelldaten → live audiovisuelle Umgebung) auf der Future Tech:Stage an der TU Braunschweig. Mein Beitrag: Vor-Ort-Deployment — containerisiert auf einem Raspberry Pi (Docker) sowie Einrichtung von API, Netzwerk und Projektoren.</p>
+      <div class="cta"><a href="https://festival.hfd.digital/en/techstage-brunswick-2026/">festival.hfd.digital →</a></div>
+    </div>
+
   </div>
 </div></section>
 
